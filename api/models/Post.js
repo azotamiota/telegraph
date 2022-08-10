@@ -21,7 +21,8 @@ class Post {
     static async create(postData){
         return new Promise (async (resolve, reject) => {
             try {
-                const newPost = await db.query('INSERT INTO posts (title, name, story) VALUES ($1, $2, $3) RETURNING*;', [ postData.title, postData.name, postData.story ])
+                const date = new Date()
+                const newPost = await db.query('INSERT INTO posts (title, name, story, date) VALUES ($1, $2, $3, $4) RETURNING*;', [ postData.title, postData.name, postData.story, date])
             const post = new Post(newPost.rows[0]);
                 resolve (post);
             } catch (err) {
