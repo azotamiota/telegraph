@@ -8,6 +8,14 @@ body {
     height: 100vh;
 }
 
+#title {
+    font-size: 30px;
+}
+
+.labels {
+    font-size: 20px;
+}
+
 .container {
     display: flex;
     align-items: center;
@@ -27,9 +35,6 @@ label {
 }
 
 input {
-    margin: 10px;
-}
-
-.input-fields {
-    width: 100
+    margin: 10px 0 30px 0;
+    width: 100%;
 }
