@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/style.css">
+    <script src="./assets/index.js" defer></script>
+    <script src="./assets/eventListeners.js" defer></script>
     <title>Telegraph</title>
 </head>
 <body>
@@ -12,9 +14,9 @@
         <div class="form-container">
             <form id="form">
                 <label><div id="title">Title</div></label>
-                <input class='input-fields' type="text" placeholder="Write a title"> <br>
+                <input id='title-input' class='input-fields' type="text" placeholder="Write a title"> <br>
                 <label><div class="labels">Name</div></label>
-                <input class='input-fields' type="text" placeholder="Enter your name"> <br>
+                <input id='name-input' class='input-fields' type="text" placeholder="Enter your name"> <br>
                 <label><div class="labels">The story</div></label>
                 <textarea class='input-fields' id='textarea' type="text" rows="4" cols="40" placeholder="Write your story here..."></textarea> <br>
                 <input type="file"> <br>

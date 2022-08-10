@@ -23,6 +23,7 @@ class Post {
     static async create(title, name, story){
         return new Promise (async (resolve, reject) => {
             try {
+                console.log('I am in create async function')
                 const date = new Date()
                 const newPost = await db.query('INSERT INTO posts (title, name, story, date) VALUES ($1, $2, $3, $4) RETURNING*;', [ title, name, story, date])
                 console.log('newPost in the POST.js model here: ', newPost);
