@@ -1,3 +1,7 @@
+/* * {
+    border: 1px solid red;
+} */
+
 body {
     margin: 0;
     text-align: center;
@@ -8,9 +12,24 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 600px;
     padding: 5%;
+    margin: 20px auto;
+}
+
+form {
+    background-color:burlywood;
+    padding: 30px;
+}
+
+label {
+    text-align: left;
 }
 
 input {
     margin: 10px;
+}
+
+.input-fields {
+    width: 100
 }
