@@ -1,5 +1,3 @@
-const { rejects } = require("assert");
-
 class Post {
     constructor(data){
         this.title = data.title;
