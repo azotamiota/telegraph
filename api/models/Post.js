@@ -1,23 +1,22 @@
 class Post {
+
     constructor(data){
         this.title = data.title;
         this.name = data.name;
         this.story = data.story;
     };
 
-    static get all(){
+    static async show(title){
         return new Promise (async (resolve, reject) => {
             try {
-                const postData = await db.query('SELECT * FROM posts');
-                const posts = postData.rows.map(b => new Post(b));
-                resolve (posts);
+                const postData = await db.query('SELECT * FROM posts WHERE posts.title = $1;', [ title ]);
+                const post = postData.rows.map(b => new Post(b));
+                resolve (post);
             } catch (err) {
-                reject('Posts were not found');
+                reject('Post not found');
             }
         });
     };
-
-    
     
     static async create(postData){
         return new Promise (async (resolve, reject) => {
@@ -30,6 +29,7 @@ class Post {
             }
         })
     };
+    
 }
 
 module.exports = Post;

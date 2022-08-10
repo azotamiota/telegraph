@@ -1,9 +1,9 @@
 const Post = require('../models/Post')
 
-async function showAll (req, res) {
+async function show (req, res) {
     try {
-        const books = await Post.all;
-        res.status(200).json(books)
+        const post = await Post.show(req.params.title);
+        res.status(200).json(post)
     } catch (err) {
         res.status(500).json({err})
     }
@@ -20,6 +20,6 @@ async function create (req, res) {
 
 
 module.exports = {
-    showAll,
+    show,
     create
 }
