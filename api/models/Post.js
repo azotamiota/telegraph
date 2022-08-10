@@ -1,3 +1,5 @@
+const db = require('../dbConfig/init')
+
 class Post {
 
     constructor(data){
@@ -18,12 +20,13 @@ class Post {
         });
     };
     
-    static async create(postData){
+    static async create(title, name, story){
         return new Promise (async (resolve, reject) => {
             try {
                 const date = new Date()
-                const newPost = await db.query('INSERT INTO posts (title, name, story, date) VALUES ($1, $2, $3, $4) RETURNING*;', [ postData.title, postData.name, postData.story, date])
-            const post = new Post(newPost.rows[0]);
+                const newPost = await db.query('INSERT INTO posts (title, name, story, date) VALUES ($1, $2, $3, $4) RETURNING*;', [ title, name, story, date])
+                console.log('newPost in the POST.js model here: ', newPost);
+                const post = new Post(newPost.rows[0]);
                 resolve (post);
             } catch (err) {
                 reject('Post could not be created')
