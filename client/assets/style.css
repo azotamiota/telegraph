@@ -1,0 +1,16 @@
+body {
+    margin: 0;
+    text-align: center;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5%;
+}
+
+input {
+    margin: 10px;
+}
