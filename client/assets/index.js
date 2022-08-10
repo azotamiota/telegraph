@@ -1,5 +1,5 @@
 async function createPost (e) {
-    e.preventDefault();
+    e.preventdefault()
     try {
         const options = {
             method: 'POST',
@@ -7,7 +7,14 @@ async function createPost (e) {
             body: JSON.stringify(Object.fromEntries(new FormData(e.target)))
         }
         const response = await fetch('http://localhost:3000/posts', options);
-        readPost();
+        const data = await response.json();
+        console.log(data)
+        // const { title, err } = await response.json();
+        // if(err) { 
+        //     throw Error(err) 
+        // } else {
+        //     window.location.hash = `posts/${title}`
+        // }
     } catch (error) {
         console.warn(error)
     }

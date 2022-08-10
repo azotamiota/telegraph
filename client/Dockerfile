@@ -1,3 +1,3 @@
-FROM node:12.18.4
+FROM node:latest
 
 RUN npm i -g http-server
