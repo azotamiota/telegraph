@@ -6,7 +6,6 @@ console.log('values: ', postTitle.value, postName.value, postStory.value)
 
 async function createPost (postTitle, name, story) {
     try {
-  
         const options = {
             method: 'POST',
             headers: { "Content-Type": "application/json" },
@@ -39,12 +38,14 @@ const postForm = document.getElementById("form")
 
 
 postForm.addEventListener('submit', (e) => {
-    e.preventDefault()
+
+    e.preventDefault();
+
     let title = postTitle.value
     let name = postName.value
     let story = postStory.value 
     console.log('title, name, story', title, name, story)
-    await createPost(title, name, story)
+    // await createPost(title, name, story)
     
 }
 )
